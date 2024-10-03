@@ -1,0 +1,54 @@
+<!-- cv_template.html -->
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>{{ name }}</h1>
+    <p>{{ jobTitle }}</p>
+    <p>{{ email }} | {{ phone }}</p>
+  </div>
+  <div class="section">
+    <h2 class="section-title">Skills</h2>
+    <ul>
+      {{#each skills}}
+      <li>{{ this }}</li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="section">
+    <h2 class="section-title">Experience</h2>
+    {{#each experiences}}
+    <p><strong>{{ title }}</strong> at {{ company }} ({{ date }})</p>
+    <p>{{ description }}</p>
+    {{/each}}
+  </div>
+</body>
+
+</html>
